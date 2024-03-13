@@ -24,7 +24,7 @@ const Accordion = ({
     <div className='flex w-[70vw] lg:max-w-[40vw] duration-300 flex-col text-black pt-2 my-2 justify-center'>
       <div
         onClick={() => toggleAccordion(accordionId)}
-        className='bg-stone-100 w-full cursor-pointer flex flex-row  p-5 space-x-3 rounded-md justify-between items-center'
+        className='border-b border-b-stone-600 w-full cursor-pointer flex flex-row  p-3 space-x-3 justify-between items-center'
       >
         <p className={`text-[15px] md:text-[18.687px] font-bold`}>{question}</p>
         <div>

@@ -1,7 +1,7 @@
 import { BenefitType, SelectedPage } from "@/shared/types";
-import { UserGroupIcon, AcademicCapIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 import Pricing_ from "./Pricing";
+import Line from "@/assets/Line.svg";
 
 const prices: Array<BenefitType> = [
   {
@@ -44,9 +44,9 @@ const Pricing = ({ setSelectedPage }: Props) => {
       <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.Pricing)}>
         {/* HEADER */}
         <div className="mx-auto w-full items-center justify-center text-center">
-          <div className="text-[35px] font-bold">
-            A <span className="text-primary">price perfect</span> for your
-            needs.
+          <div className="flex justify-center text-center text-[35px] font-bold">
+            <img alt="logo" className="h-10 w-6" src={Line} />A{" "}
+            <span className="text-primary">price perfect</span> for your needs.
           </div>
           <div className="mx-[29em] text-sm">
             From catering for your personal, business, event, socials needs, you

@@ -1,6 +1,7 @@
 import useMediaQuery from "@/hooks/useMediaQuery";
 import { SelectedPage } from "@/shared/types";
 import ActionButton from "@/shared/ActionButton";
+import LinkIMG from "@/assets/linkIMG.png";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { motion } from "framer-motion";
 
@@ -78,10 +79,22 @@ const Home = ({ setSelectedPage }: Props) => {
         </div>
       </motion.div>
 
-      <div className="relative mt-[-3em] ml-[-18em] flex mx-auto items-center justify-center">
+      <div className="relative mx-auto mt-[-3em] ml-[-18em] flex items-center justify-center">
         <div className="text-[40px] font-bold">
-          <div className="before:-top-500 before:ml-[-4em] text-[40px] font-bold leading-[60px] before:absolute before:z-[1] md:before:content-triangle"></div>
-          <div className="w-[500px] h-[260px] mr-[-13em] border-3-black border before:z-[5] rounded-md"></div>
+          <div className="before:-top-500 text-[40px] font-bold leading-[60px] before:absolute before:z-[1] before:ml-[-4em] md:before:content-triangle"></div>
+
+          <div className="mr-[-13em] h-[260px] w-[500px] rounded-md before:z-[5]">
+            <div className="inline-flex h-56 w-[504px] flex-col items-start justify-center gap-4 rounded-3xl border border-blue-700 bg-white bg-opacity-10 px-[60px] py-10 backdrop-blur-[212px]">
+              <div className="inline-flex items-center justify-start gap-5">
+                <img alt="logo" src={LinkIMG} />
+                <div className="relative h-20 w-20" />
+              </div>
+              <div className="self-stretch text-center font-['Gilroy-Medium'] text-base font-normal text-neutral-900">
+                Seamlessly transform your long URLs intoconcise and shareable
+                links with just few clicks.
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
