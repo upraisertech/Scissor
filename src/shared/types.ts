@@ -9,8 +9,9 @@ export enum SelectedPage {
 }
 
 export interface BenefitType {
-  icon: JSX.Element;
   title: string;
+  price: string;
+  sub_title: string;
   description: string;
 }
 

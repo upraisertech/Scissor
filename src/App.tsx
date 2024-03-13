@@ -1,8 +1,11 @@
 import Navbar from "@/components/navbar";
 import Home from "@/components/home";
 import Features from "@/components/features";
+import WhyChooseScissors from "@/components/features/WhyChooseScissors";
 import Pricing from "@/components/pricing";
-import ContactUs from "@/components/contactUs";
+import PasteURL from "@/components/pasteURL";
+import FAQs from "@/components/Faq/faqs";
+import Revolutionizing from "@/components/Faq/Revolutionizing";
 import Footer from "@/components/footer";
 import { useEffect, useState } from "react";
 import { SelectedPage } from "@/shared/types";
@@ -37,9 +40,12 @@ function App() {
         setSelectedPage={setSelectedPage}
       />
       <Home setSelectedPage={setSelectedPage} />
-      <Pricing setSelectedPage={setSelectedPage} />
       <Features setSelectedPage={setSelectedPage} />
-      <ContactUs setSelectedPage={setSelectedPage} />
+      <WhyChooseScissors setSelectedPage={setSelectedPage} />
+      <Pricing setSelectedPage={setSelectedPage} />
+      <PasteURL setSelectedPage={setSelectedPage} />
+      <FAQs />
+      <Revolutionizing setSelectedPage={setSelectedPage} />
       <Footer />
     </div>
   );

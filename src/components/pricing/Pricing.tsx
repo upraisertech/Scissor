@@ -1,6 +1,5 @@
 import { SelectedPage } from "@/shared/types";
 import { motion } from "framer-motion";
-import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const childVariant = {
   hidden: { opacity: 0, scale: 0.9 },
@@ -8,33 +7,70 @@ const childVariant = {
 };
 
 type Props = {
-  icon: JSX.Element;
   title: string;
+  price: string;
+  sub_title: string;
   description: string;
   setSelectedPage: (value: SelectedPage) => void;
 };
 
-const Pricing = ({ icon, title, description, setSelectedPage }: Props) => {
+const Pricing = ({
+  sub_title,
+  title,
+  price,
+  description,
+  setSelectedPage,
+}: Props) => {
   return (
     <motion.div
       variants={childVariant}
-      className="mt-5 rounded-md border-2 border-gray-100 px-5 py-16 text-center"
+      className="inline-flex w-[370px] flex-col items-start justify-start rounded-xl border border-blue-700 bg-white py-6 pl-[4em] shadow"
     >
-      <div className="mb-4 flex justify-center">
-        <div className="rounded-full border-2 border-gray-100 bg-primary-100 p-4">
-          {icon}
+      <div className="text-center font-['Gilroy-Medium'] text-2xl font-normal leading-loose text-neutral-900">
+        {title}
+      </div>
+      <div className="inline-flex flex-col items-start justify-start gap-4 self-stretch">
+        <div className="flex flex-col items-start justify-start gap-2">
+          <div className="text-center font-['Gilroy-Bold'] text-[40px] font-normal leading-[48px] text-neutral-900">
+            {sub_title}
+          </div>
+          <div className="text-center font-['Gilroy-Medium'] text-xl font-normal leading-loose text-neutral-900">
+            {description}
+          </div>
+        </div>
+        <div className="flex flex-col items-start justify-start gap-6">
+          <div className="inline-flex items-center justify-center gap-2">
+            <div className="relative h-4 w-4"></div>
+            <div className="text-center font-['Gilroy-Medium'] text-sm font-normal leading-normal text-neutral-900">
+              Unlimited URL Shortening
+            </div>
+          </div>
+          <div className="inline-flex items-center justify-center gap-2">
+            <div className="relative h-4 w-4"></div>
+            <div className="text-center font-['Gilroy-Medium'] text-sm font-normal leading-normal text-neutral-900">
+              Basic Link Analytics
+            </div>
+          </div>
+          <div className="inline-flex items-center justify-start gap-2">
+            <div className="relative h-4 w-4"></div>
+            <div className="text-center font-['Gilroy-Medium'] text-sm font-normal leading-normal text-black">
+              Customizable Short Links
+            </div>
+          </div>
+          <div className="inline-flex items-center justify-start gap-2">
+            <div className="relative h-4 w-4"></div>
+            <div className="text-center font-['Gilroy-Medium'] text-sm font-normal leading-normal text-black">
+              Standard Support
+            </div>
+          </div>
+          <div className="inline-flex items-center justify-start gap-2">
+            <div className="relative h-4 w-4"></div>
+            <div className="text-center font-['Gilroy-Medium'] text-sm font-normal leading-normal text-black">
+              Ad-supported
+            </div>
+          </div>
         </div>
       </div>
-
-      <h4 className="font-bold">{title}</h4>
-      <p className="my-3">{description}</p>
-      <AnchorLink
-        className="text-sm font-bold text-primary-500 underline hover:text-secondary-500"
-        onClick={() => setSelectedPage(SelectedPage.ContactUs)}
-        href={`#${SelectedPage.ContactUs}`}
-      >
-        <p>Learn More</p>
-      </AnchorLink>
     </motion.div>
   );
 };

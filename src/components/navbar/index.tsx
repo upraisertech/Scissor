@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
-import AnchorLink from "react-anchor-link-smooth-scroll";
 import Logo from "@/assets/Logo.svg";
 import Link from "./Link";
 import { SelectedPage } from "@/shared/types";

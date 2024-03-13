@@ -14,7 +14,7 @@ const Home = ({ setSelectedPage }: Props) => {
   return (
     <section
       id="home"
-      className="bg-block w-full items-center justify-center gap-16 py-6 before:absolute before:-top-0 before:-left-0 md:h-full md:pb-0 md:before:content-heroBG"
+      className="bg-block mt-[10rem] w-full items-center justify-center gap-16 py-6 before:absolute before:-top-0 before:-left-0 md:h-full md:pb-0 md:before:content-heroBG"
     >
       {/* IMAGE AND MAIN HEADER */}
       <motion.div
@@ -40,7 +40,7 @@ const Home = ({ setSelectedPage }: Props) => {
                 Optimize Your Online Experience with Our Advanced{" "}
                 <span className="text-primary">URL Shortening </span>
                 Solution
-                <div className="before:-top-120 before:-left-420 text-[40px] font-bold leading-[60px] before:absolute before:z-[-1] md:before:content-scissortext"></div>
+                <div className="before:-top-120 before:-left-420 text-[40px] font-bold leading-[60px] before:absolute before:z-[-1] before:content-scissortext"></div>
               </div>
             </div>
 
@@ -78,7 +78,7 @@ const Home = ({ setSelectedPage }: Props) => {
         </div>
       </motion.div>
 
-      <div className="relative mt-[-13em] ml-[-18em] flex mx-auto items-center justify-center">
+      <div className="relative mt-[-3em] ml-[-18em] flex mx-auto items-center justify-center">
         <div className="text-[40px] font-bold">
           <div className="before:-top-500 before:ml-[-4em] text-[40px] font-bold leading-[60px] before:absolute before:z-[1] md:before:content-triangle"></div>
           <div className="w-[500px] h-[260px] mr-[-13em] border-3-black border before:z-[5] rounded-md"></div>
