@@ -10,7 +10,7 @@ import Footer from "@/components/footer";
 
 const Login = () => {
   const inputStyles = `mb-5 w-full rounded-lg border border-primary outline-none
-  px-5 py-3 placeholder-primary text-primary ring-primary focus-within:ring-1`;
+  px-5 py-3 text-primary ring-primary focus-within:ring-1`;
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -130,7 +130,7 @@ const Login = () => {
                 className="w-full rounded-full border-[1px] bg-primary px-10 py-2 text-white hover:border-primary hover:bg-white hover:text-primary"
                 // onClick={}
               >
-                SUBMIT
+                Log in
               </button>
             </form>
 

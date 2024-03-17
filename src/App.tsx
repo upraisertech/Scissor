@@ -3,11 +3,8 @@ import { Routes, Route, Navigate, useNavigate, useLocation } from "react-router-
 import Home from "@/pages/home";
 import Login from "./pages/login";
 import { SelectedPage } from "@/shared/types";
-// My URLs
-// Features
-// Pricing
-// Analytics
-// FAQs
+import Register from "./pages/register";
+
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
     SelectedPage.Home
@@ -25,6 +22,7 @@ function App() {
     <div className=""><Routes>
     <Route path="/" element={<Home />} />
     <Route path="/sign-in" element={<Login />} />
+    <Route path="/sign-up" element={<Register />} />
     </Routes>
     </div>
   );

@@ -30,9 +30,9 @@ export const ConfirmPassword = ({ confirmPasswordToggle, onClick } : ConfirmProp
   return (
     <button type="button" onClick={onClick} className="toggle-password-button">
       {confirmPasswordToggle ? (
-           <Icon icon="mdi:eye" className="w-[24px]" color="#d0c9d6" />
+           <Icon icon="mdi:eye" className="w-[24px]" color="#0065FE" />
       ) : (
-        <Icon icon="mdi:eye-off" className="w-[24px]" color="#d0c9d6" />
+        <Icon icon="mdi:eye-off" className="w-[24px]" color="#0065FE" />
       )}
     </button>
   );
