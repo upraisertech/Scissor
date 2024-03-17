@@ -1,10 +1,10 @@
 export enum SelectedPage {
   MyURLs = "home",
+  // Home = "home",
   Features = "features",
   Pricing = "pricing",
   Analytics = "analytics",
   FAQs = "faq",
-  ContactUs = "ContactUs",
   Home = "Home"
 }
 

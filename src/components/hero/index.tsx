@@ -14,8 +14,8 @@ const Home = ({ setSelectedPage }: Props) => {
 
   return (
     <section
-      id="home"
-      className="bg-block mt-[10rem] w-full items-center justify-center gap-16 py-6 before:absolute before:-top-0 before:-left-0 md:h-full md:pb-0 md:before:content-heroBG"
+      id="#"
+      className="bg-block mt-[20rem] w-full items-center justify-center gap-16 py-6 before:absolute before:-top-0 before:-left-0 md:h-full md:pb-0 md:before:content-heroBG"
     >
       {/* IMAGE AND MAIN HEADER */}
       <motion.div
@@ -70,8 +70,6 @@ const Home = ({ setSelectedPage }: Props) => {
             </ActionButton>
             <AnchorLink
               className="text-sm font-bold text-primary hover:text-black"
-              onClick={() => setSelectedPage(SelectedPage.ContactUs)}
-              href={`#${SelectedPage.ContactUs}`}
             >
               <p>Learn More</p>
             </AnchorLink>
@@ -79,7 +77,7 @@ const Home = ({ setSelectedPage }: Props) => {
         </div>
       </motion.div>
 
-      <div className="relative mx-auto mt-[-3em] ml-[-18em] flex items-center justify-center">
+      <div className="relative mx-auto mt-[6em] ml-[-22em] flex items-center justify-center">
         <div className="text-[40px] font-bold">
           <div className="before:-top-500 text-[40px] font-bold leading-[60px] before:absolute before:z-[1] before:ml-[-4em] md:before:content-triangle"></div>
 

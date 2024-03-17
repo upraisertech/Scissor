@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import Logo from "@/assets/logo.svg";
-import Link from "./Link";
+import Link_ from "./Link";
 import { SelectedPage } from "@/shared/types";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import ActionButton from "@/shared/ActionButton";
@@ -17,6 +18,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const navbarBackground = isTopOfPage ? "" : "bg-white drop-shadow";
+  let navigate = useNavigate();
 
   return (
     <nav>
@@ -35,34 +37,34 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
             {isAboveMediumScreens ? (
               <div className={`${flexBetween} w-full`}>
                 <div className={`${flexBetween} gap-8 text-sm`}>
-                  <Link
+                  <Link_
                     page="My URLs"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                   />
-                  <Link
+                  <Link_
                     page="Features"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                   />
-                  <Link
+                  <Link_
                     page="Pricing"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                   />
-                  <Link
+                  <Link_
                     page="Analytics"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                   />
-                  <Link
+                  <Link_
                     page="FAQs"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                   />
                 </div>
                 <div className={`${flexBetween} gap-8`}>
-                  <button className="hover:text-primary">Sign In</button>
+                  <button onClick={() => navigate("/sign-in")} className="hover:text-primary">Sign In</button>
                   <ActionButton setSelectedPage={setSelectedPage}>
                     Try for free
                   </ActionButton>
@@ -92,27 +94,27 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
 
           {/* MENU ITEMS */}
           <div className="ml-[33%] flex flex-col gap-10 text-2xl">
-            <Link
+            <Link_
               page="My URLs"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
-            <Link
+            <Link_
               page="Features"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
-            <Link
+            <Link_
               page="Pricing"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
-            <Link
+            <Link_
               page="Analytics"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
-            <Link
+            <Link_
               page="FAQs"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}

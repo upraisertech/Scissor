@@ -32,7 +32,6 @@ const ContactUs = ({ setSelectedPage }: Props) => {
     >
       <motion.div
       className=""
-        onViewportEnter={() => setSelectedPage(SelectedPage.ContactUs)}
       >
         <div className="text-[27px] font-bold text-white">
           Revolutionizing Link Optimization
@@ -41,7 +40,7 @@ const ContactUs = ({ setSelectedPage }: Props) => {
         <button
           type="submit"
           className="mt-5 w-[12em] rounded-full bg-primary px-10 py-2 text-white hover:border-[1px] hover:border-primary hover:bg-white hover:text-primary"
-          onClick={() => setSelectedPage(SelectedPage.ContactUs)}
+          // onClick={() => setSelectedPage(SelectedPage.ContactUs)}
         >
           Get Started
         </button>

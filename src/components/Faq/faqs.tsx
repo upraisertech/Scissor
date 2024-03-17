@@ -1,9 +1,14 @@
 import React, { useState } from "react";
+import { BenefitType, SelectedPage } from "@/shared/types";
 import Accordion from "./accordion";
 import { faqdata } from "./faqdata";
 import Line from "@/assets/Line.svg";
 
-const FAQs = () => {
+  type Props = {
+    setSelectedPage: (value: SelectedPage) => void;
+  };
+
+const FAQs = ({ setSelectedPage }: Props) => {
   const [openAccordionId, setOpenAccordionId] = useState(null);
 
   const toggleAccordion = (accordionId: null) => {
@@ -12,8 +17,9 @@ const FAQs = () => {
     );
   };
 
+
   return (
-    <div className="lg:p-40 relative flex w-full  flex-col items-center justify-center gap-3  p-10 md:flex-row">
+    <div id="faqs" className="lg:p-40 relative flex w-full  flex-col items-center justify-center gap-3  p-10 md:flex-row">
       <div className=" self-center">
         <div className="flex justify-center text-center text-[35px] font-bold">
           <img alt="logo" className="h-10 w-6" src={Line} />FAQ’S

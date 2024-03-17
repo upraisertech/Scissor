@@ -2,7 +2,7 @@ import Logo from "@/assets/logo_black.svg";
 
 const Footer = () => {
   return (
-    <footer className="before:-top-120 before:-left-420 mx-auto mt-[12em] flex w-full items-center justify-start pb-32 before:absolute before:z-[-1] before:content-Footer">
+    <footer className="before:-top-120 before:-left-420 mx-auto mt-[14em] flex w-full items-center justify-start pb-32 before:absolute before:z-[-1] before:content-Footer">
       <div className="justify-content mx-auto mt-[-9em] flex gap-16 md:flex">
         <div className="mt-16 md:mt-0">
           <span className="flex gap-2">

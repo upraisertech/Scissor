@@ -1,13 +1,7 @@
-import Navbar from "@/components/navbar";
-import Home from "@/components/home";
-import Features from "@/components/features";
-import WhyChooseScissors from "@/components/features/WhyChooseScissors";
-import Pricing from "@/components/pricing";
-import PasteURL from "@/components/pasteURL";
-import FAQs from "@/components/Faq/faqs";
-import Revolutionizing from "@/components/Faq/Revolutionizing";
-import Footer from "@/components/footer";
 import { useEffect, useState } from "react";
+import { Routes, Route, Navigate, useNavigate, useLocation } from "react-router-dom";
+import Home from "@/pages/home";
+import Login from "./pages/login";
 import { SelectedPage } from "@/shared/types";
 // My URLs
 // Features
@@ -20,33 +14,18 @@ function App() {
   );
   const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true);
 
+  const route = useLocation();
+  // const location = useLocation();
+
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY === 0) {
-        setIsTopOfPage(true);
-        setSelectedPage(SelectedPage.Home);
-      }
-      if (window.scrollY !== 0) setIsTopOfPage(false);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    window.scrollTo(0, 0);
+  }, [route]);
 
   return (
-    <div className="app">
-      <Navbar
-        isTopOfPage={isTopOfPage}
-        selectedPage={selectedPage}
-        setSelectedPage={setSelectedPage}
-      />
-      <Home setSelectedPage={setSelectedPage} />
-      <Features setSelectedPage={setSelectedPage} />
-      <WhyChooseScissors setSelectedPage={setSelectedPage} />
-      <Pricing setSelectedPage={setSelectedPage} />
-      <PasteURL setSelectedPage={setSelectedPage} />
-      <FAQs />
-      <Revolutionizing setSelectedPage={setSelectedPage} />
-      <Footer />
+    <div className=""><Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/sign-in" element={<Login />} />
+    </Routes>
     </div>
   );
 }

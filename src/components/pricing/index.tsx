@@ -46,7 +46,8 @@ const Pricing = ({ setSelectedPage }: Props) => {
         <div className="mx-auto w-full items-center justify-center text-center">
           <div className="flex justify-center text-center text-[35px] font-bold">
             <img alt="logo" className="h-10 w-6" src={Line} />A{" "}
-            <span className="text-primary">price perfect</span> for your needs.
+            <span className="text-primary"> price perfect </span> for your
+            needs.
           </div>
           <div className="mx-[29em] text-sm">
             From catering for your personal, business, event, socials needs, you
@@ -76,13 +77,13 @@ const Pricing = ({ setSelectedPage }: Props) => {
         <div className="mt-12 flex items-center justify-center gap-3">
           <button
             className="w-[15em] rounded-full border-[1px] border-primary bg-white px-10 py-2 text-primary hover:bg-primary hover:text-white"
-            onClick={() => setSelectedPage(SelectedPage.ContactUs)}
+            // onClick={() => setSelectedPage(SelectedPage.ContactUs)}
           >
             Get Custom Pricing
           </button>
           <button
             className="w-[15em] rounded-full border-[1px] bg-primary px-10 py-2 text-white hover:border-primary hover:bg-white hover:text-primary"
-            onClick={() => setSelectedPage(SelectedPage.ContactUs)}
+            // onClick={() => setSelectedPage(SelectedPage.ContactUs)}
           >
             Select Pricing
           </button>

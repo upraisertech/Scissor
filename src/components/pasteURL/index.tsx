@@ -27,11 +27,11 @@ const ContactUs = ({ setSelectedPage }: Props) => {
 
   return (
     <section
-      id="pasteurl"
+      id="myurls"
       className="mx-auto flex w-full mt-[12em] items-center justify-center pb-32 before:-top-120 before:-left-420 before:absolute before:z-[-1] before:content-PasteURL"
     >
       <motion.div
-        onViewportEnter={() => setSelectedPage(SelectedPage.ContactUs)}
+        // onViewportEnter={() => setSelectedPage(SelectedPage.ContactUs)}
       >
         {/* FORM */}
         <div className="px-4 py-8 bg-white items-center justify-center justify-between gap-8 md:flex rounded-lg shadow">
@@ -99,7 +99,7 @@ const ContactUs = ({ setSelectedPage }: Props) => {
               <button
                 type="submit"
                 className="w-full rounded-full border-[1px] bg-primary px-10 py-2 text-white hover:border-primary hover:bg-white hover:text-primary"
-                onClick={() => setSelectedPage(SelectedPage.ContactUs)}
+                // onClick={() => setSelectedPage(SelectedPage.ContactUs)}
               >
                 SUBMIT
               </button>

@@ -8,11 +8,11 @@ type Props = {
 
 const Features = ({ setSelectedPage }: Props) => {
   return (
-    <section id="features" className="w-full bg-[#F9FBFD] pb-[5em] pt-[10em]">
+    <section id="features" className="w-full bg-[#F9FBFD] pb-[5em] pt-[8em]">
       <motion.div
         onViewportEnter={() => setSelectedPage(SelectedPage.Features)}
       >
-        <div className="relative mx-auto mt-[14em] flex items-center justify-center">
+        <div className="relative mx-auto mt-[5em] flex items-center justify-center">
           <div className="text-[40px] font-bold w-[12em]">
             One Stop. Four <span className="text-primary">Possibilities</span>.
           </div>

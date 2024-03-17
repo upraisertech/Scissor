@@ -13,7 +13,7 @@ type Props = {
 const WhyChooseScissors = ({ setSelectedPage }: Props) => {
   return (
     <section
-      id="features"
+      id=""
       className="flex-inline w-full items-center justify-center bg-white px-[5em] pb-[5em] pt-[3em]"
     >
       <motion.div
