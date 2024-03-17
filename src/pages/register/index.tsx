@@ -46,7 +46,7 @@ const Register = () => {
   return (
     <section
       id=""
-      className="flex-inline mx-auto mt-[8em] w-full items-center justify-center"
+      className="flex-inline mx-auto mt-[4em] w-full items-center justify-center"
     >
       <div className="mb-3 text-center">Sign up with:</div>
       <div className="flex items-center justify-center gap-3">
@@ -66,7 +66,7 @@ const Register = () => {
         </button>
       </div>
 
-      <div className="mt-8 flex flex-row items-center justify-center gap-5 px-[15em]">
+      <div className="mt-6 flex flex-row items-center justify-center gap-5 px-[15em]">
         <hr className="my-1.5 h-0.5 w-[25%] bg-gray-300" />
         <span className="font-medium text-black">OR</span>
         <hr className="my-1.5 h-[2px] w-[25%] bg-gray-300" />
