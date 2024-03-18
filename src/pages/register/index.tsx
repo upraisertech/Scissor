@@ -2,16 +2,19 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import ShowHidePassword, { ConfirmPassword } from "@/shared/ShowHidePassword";
-import { motion } from "framer-motion";
+import { toast } from 'react-toastify';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth, fireDB } from '../../Firebase/firebase';
+import { Timestamp, addDoc, collection } from 'firebase/firestore';
 import Google from "@/assets/googleg.svg";
 import Apple from "@/assets/apple.svg";
-import HText from "@/shared/HText";
 import Footer from "@/components/footer";
 
 const Register = () => {
   const inputStyles = `mb-5 w-full rounded-lg border border-primary outline-none
   px-5 py-3 text-primary ring-primary focus-within:ring-1`;
 
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirm_password, setConfirm_password] = useState("");
@@ -30,23 +33,43 @@ const Register = () => {
   const confirmPassword = () => {
     setConfirmPasswordToggle(!confirmPasswordToggle);
   };
-  const {
-    register,
-    trigger,
-    formState: { errors },
-  } = useForm();
 
-  const onSubmit = async (e: any) => {
-    const isValid = await trigger();
-    if (!isValid) {
-      e.preventDefault();
+  const signup = async () => {
+    setLoading(true)
+    if (username === "" || email === "" || password === "") {
+        return toast.error("All fields are required")
     }
-  };
+
+    try {
+        const users = await createUserWithEmailAndPassword(auth, email, password);
+
+        // console.log(users)
+
+        const user = {
+          username: username,
+            uid: users.user.uid,
+            email: users.user.email,
+            time : Timestamp.now()
+        }
+        const userRef = collection(fireDB, "users")
+        await addDoc(userRef, user);
+        toast.success("Signup Succesfully")
+        setUsername("");
+        setEmail("");
+        setPassword("");
+        navigate('/')
+        setLoading(false)
+        
+    } catch (error) {
+        console.log(error)
+        setLoading(false)
+    }
+}
 
   return (
     <section
       id=""
-      className="flex-inline mx-auto mt-[4em] w-full items-center justify-center"
+      className="flex-inline mx-auto mt-[4em] px-[15em] w-full items-center justify-center"
     >
       <div className="mb-3 text-center">Sign up with:</div>
       <div className="flex items-center justify-center gap-3">
@@ -66,52 +89,33 @@ const Register = () => {
         </button>
       </div>
 
-      <div className="mt-6 flex flex-row items-center justify-center gap-5 px-[15em]">
+      <div className="mt-6 flex flex-row items-center justify-center gap-5">
         <hr className="my-1.5 h-0.5 w-[25%] bg-gray-300" />
         <span className="font-medium text-black">OR</span>
         <hr className="my-1.5 h-[2px] w-[25%] bg-gray-300" />
       </div>
 
       {/* FORM */}
-      <div className="items-center justify-center gap-8 rounded-lg bg-white px-[24em] px-4 py-8 pb-[6em] shadow md:flex">
-        <div className="mt-10 w-[40em] md:mt-0">
-          <form
-            target="_blank"
-            onSubmit={onSubmit}
-            action="https://formsubmit.co/e8a5bdfa807605332f809e5656e27c6e"
-            method="POST"
-          >
+      <div className="items-center justify-center gap-8 px-4 pb-[6em] flex">
+        <div className="mt-8">
+          <div >
             <input
               className={inputStyles}
               type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
               placeholder="Username"
-              {...register("username", {
-                required: true,
-                maxLength: 100,
-              })}
+              required
             />
-            {errors.name && (
-              <p className="mt-1 text-primary-500">
-                {errors.name.type === "required" && "This field is required."}
-                {errors.name.type === "maxLength" && "Max length is 100 char."}
-              </p>
-            )}
 
             <input
               className={inputStyles}
-              type="text"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="Email"
-              {...register("email", {
-                required: true,
-                pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-              })}
+              required
             />
-            {errors.email && (
-              <p className="mb-3 mt-[-12px] text-primary-500">
-                {errors.email.type === "required" && "This field is required."}
-                {errors.email.type === "pattern" && "Invalid email address."}
-              </p>
-            )}
 
             <div className="mb-5 flex h-[48px] items-center justify-between rounded-[10px] border-[1px] border-primary pr-[12px] ring-primary focus-within:ring-1">
               <input
@@ -122,7 +126,6 @@ const Register = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 className="border-none bg-transparent px-5 text-base outline-none"
                 name="password"
-                id="password"
               />
               <ShowHidePassword
                 onClick={showPassword}
@@ -151,11 +154,11 @@ const Register = () => {
             <button
               type="submit"
               className="w-full rounded-full border-[1px] bg-primary px-10 py-2 text-white hover:border-primary hover:bg-white hover:text-primary"
-              // onClick={}
+              onClick={signup}
             >
               Sign up with Email
             </button>
-          </form>
+          </div>
 
           <div className="my-5 text-center">
             Already have an account? {" "}
