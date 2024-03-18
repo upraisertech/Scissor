@@ -25,7 +25,7 @@ module.exports = {
         montserrat: ["Montserrat", "sans-serif"],
       },
       content: {
-        scissortext: "url('./assets/Logo.svg')",
+        scissortext: "url('./assets/line_text.svg')",
         heroBG: "url('./assets/Hero_Section.png')",
         triangle: "url('./assets/triangle.png')",
         PasteURL: "url('./assets/Desktop11.png')",

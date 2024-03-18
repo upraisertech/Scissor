@@ -41,11 +41,11 @@ const Home = ({ setSelectedPage }: Props) => {
                 Optimize Your Online Experience with Our Advanced{" "}
                 <span className="text-primary">URL Shortening </span>
                 Solution
-                <div className="before:-top-120 before:-left-420 text-[40px] font-bold leading-[60px] before:absolute before:z-[-1] before:content-scissortext"></div>
+                <div className="before:-top-100 before:-left-420 text-[40px] font-bold leading-[60px] before:absolute before:z-[-1] before:content-scissortext"></div>
               </div>
             </div>
 
-            <p className="mx-[3rem] mt-5 text-sm">
+            <p className="mx-[3rem] mt-12 text-sm">
               Personalize your shortened URLs to align with your brand identity.
               Utilize custom slugs, branded links, and domain customization
               options to reinforce your brand presence and enhance user
